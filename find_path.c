@@ -15,17 +15,12 @@ char *find_path(char *first)
 	while (pth)
 	{
 		string = malloc(strlen(first) + strlen(pth) + 2);
-		/*string = strcat(string, pth);
-		string = strcat(string, "/");
-		string = strcat(string, first);*/
 		for (i = 0; pth[i]; i++)
 			string[i] = pth[i];
-		printf("%d\n", i);
 		string[i++] = '/';
 		for (j = 0; first[j]; j++)
 			string[i + j] = first[j];
 		string[i + j] = '\0';
-		printf("%s\n", string);
 		if (stat(string, &st) == 0)
 			return (string);
 		pth = strtok(NULL, ":");
