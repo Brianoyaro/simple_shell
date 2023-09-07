@@ -30,7 +30,7 @@ int toker(char *line, char **argv)
 	tokens[i] = NULL;
 	value = builtin(tokens, line, argv);
 	if (value == 1)
-		value = exec_fxn(tokens, argv);
+		value = exec_fxn(tokens, argv, line);
 	for (i = 0; tokens[i]; i++)
 		free(tokens[i]);
 	free(tokens);

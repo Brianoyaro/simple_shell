@@ -17,8 +17,9 @@ int builtin(char **tks, char *tk, char **argv);
 void env_fxn(void);
 void exit_fxn(char **tks, char *tk, char **argv);
 char *find_path(char *first);
-int exec_fxn(char **toks, char **argv);
+int exec_fxn(char **toks, char **argv, char *tk);
 char *hand_hash(char *str);
 int a_toi(char *str);
+void err(char **tokens, char **argv);
 
 #endif
