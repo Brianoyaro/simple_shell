@@ -4,9 +4,10 @@
  * @toks: tokenized user input
  * @argv: argument vector
  * @tk: untokenized user input
+ * @count: loop iteration number
  * Return: 0 on success
  */
-int exec_fxn(char **toks, char **argv, char *tk)
+int exec_fxn(char **toks, char **argv, char *tk, int count)
 {
 	pid_t pid;
 	int value = 0, status;
@@ -32,7 +33,7 @@ int exec_fxn(char **toks, char **argv, char *tk)
 			cmd = find_path(toks[0]);
 			if (cmd == NULL)
 			{
-				err(toks, argv);
+				err(toks, argv, count);
 				free(tk);/*potential problem*/
 				exit(0);
 			}

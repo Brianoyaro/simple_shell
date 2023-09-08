@@ -3,9 +3,10 @@
  * toker - tokenizes user input
  * @line: untokenized user input
  * @argv: argument vector
+ * @count: loop itteratioin number
  * Return: 0 on success
  */
-int toker(char *line, char **argv)
+int toker(char *line, char **argv, int count)
 {
 	char *line_cpy, *delim = " \t\n", **tokens, *token;
 	int tkn_len = 0, i = 0, value;
@@ -28,9 +29,9 @@ int toker(char *line, char **argv)
 		i++;
 	}
 	tokens[i] = NULL;
-	value = builtin(tokens, line, argv);
+	value = builtin(tokens, line, argv, count);
 	if (value == 1)
-		value = exec_fxn(tokens, argv, line);
+		value = exec_fxn(tokens, argv, line, count);
 	for (i = 0; tokens[i]; i++)
 		free(tokens[i]);
 	free(tokens);

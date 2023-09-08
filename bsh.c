@@ -7,6 +7,7 @@
  */
 int main(int argc, char **argv)
 {
+	int count = 0;
 	ssize_t i = 0;
 	size_t n = 0;
 	char *buf;
@@ -15,6 +16,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	while (1)
 	{
+		count++;
 		buf = NULL;
 		signal(SIGINT, control);
 		if (isatty(STDIN_FILENO))
@@ -31,7 +33,7 @@ int main(int argc, char **argv)
 		if (buf[0] != '#')
 		{
 			buf = hand_hash(buf);
-			toker(buf, argv);
+			toker(buf, argv, count);
 		}
 		free(buf);
 	}
