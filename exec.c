@@ -26,7 +26,7 @@ int exec_fxn(char **toks, char **argv, char *tk, int count)
 		{
 			value = execve(toks[0], toks, environ);
 			if (value == -1)
-				perror("Execve"), exit(0);
+				perror("Execve");
 		}
 		else
 		{
