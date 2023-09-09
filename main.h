@@ -15,7 +15,7 @@ void control(int n);
 int toker(char *line, char **argv, int count);
 int builtin(char **tks, char *tk, char **argv, int count);
 void env_fxn(void);
-void exit_fxn(char **tks, char *tk, char **argv, int count);
+void exit_fxn(char **tks, char *tk/*, char **argv, int count*/);
 char *find_path(char *first);
 int exec_fxn(char **toks, char **argv, char *tk, int count);
 char *hand_hash(char *str);
