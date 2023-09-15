@@ -19,6 +19,8 @@ int toker(char *line, char **argv, int count)
 		token = strtok(NULL, delim);
 	}
 	free(line_cpy);
+	if (tkn_len == 0)
+		return (0);/*DEBUIN*/
 	tokens = malloc((tkn_len + 2) * sizeof(char *));
 	token = strtok(line, delim);
 	while (token)

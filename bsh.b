@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 	int count = 0;
 	ssize_t i = 0;
 	size_t n = 0;
-	char *buf = NULL;
+	char *buf;
 
 	if (argc < 0)
 		exit(EXIT_FAILURE);
@@ -27,17 +27,15 @@ int main(int argc, char **argv)
 			free(buf);
 			exit(0);
 		}
-		if (buf[0] != '\n')
+		/*buf = hand_hash(buf);
+		toker(buf, argv);
+		free(buf);*/
+		if (buf[0] != '#')
 		{
-			if (buf[0] != '#')
-			{
-				buf = hand_hash(buf);
-				toker(buf, argv, count);
-			}
-			free(buf);
+			buf = hand_hash(buf);
+			toker(buf, argv, count);
 		}
-		else
-			free(buf);
+		free(buf);
 	}
 	return (0);
 }

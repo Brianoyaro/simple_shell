@@ -12,7 +12,7 @@ int cd_fxn(char **tokens)
 
 	if (strcmp(tokens[1], ".") == 0)
 		;
-	else if (strcmp(tokens[1], "~") == 0)
+	else if (strcmp(tokens[1], "~") == 0 || (tokens[1] == NULL))
 	{
 		r_val = chdir(home);
 		if (r_val == -1)
@@ -21,8 +21,6 @@ int cd_fxn(char **tokens)
 			return (-1);
 		}
 	}
-	else if (tokens[1] == NULL)
-		;
 	else
 	{
 		r_val = chdir(tokens[1]);
