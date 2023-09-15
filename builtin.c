@@ -13,6 +13,12 @@ int builtin(char **tks, char *tk, char **argv, int count)
 	pid_t pid;
 	int r_val = 1, value = 0;
 
+	if (strcmp(tks[0], "cd") == 0)
+	{
+		r_val = cd_fxn(tks);
+		if (r_val == -1)
+			err1(tks, argv, count);
+	}
 	if (strcmp(tks[0], "env") == 0)
 	{
 		env_fxn();

@@ -24,5 +24,7 @@ void err(char **tokens, char **argv, int count);
 void exit_err(char **tokens, char **argv, int count);
 int printer(int value);
 int put_char(char n);
+int cd_fxn(char **tokens);
+void err1(char **tokens, char **argv, int count);
 
 #endif
