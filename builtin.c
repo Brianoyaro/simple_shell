@@ -26,8 +26,8 @@ int builtin(char **tks, char *tk, char **argv, int count)
 	}
 	if (strcmp(tks[0], "exit") == 0)
 	{
-		/*exit_fxn(tks, tk, argv, count);
-		r_val = 0;*/
+		/*exit_fxn(tks, tk, argv, count);*/
+		/*r_val = 0;*/
 		if (tks[1] == NULL)
 		{
 			exit_fxn(tks, tk);

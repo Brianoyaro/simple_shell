@@ -1,8 +1,9 @@
 #include "main.h"
 /**
- * err - writes error message to STDOUT
+ * exit_err - writes error message to STDOUT
  * @tokens: tokenized user input
  * @argv: argument vector
+ * @count: input value
  * Return: Nothing
  */
 void exit_err(char **tokens, char **argv, int count)
